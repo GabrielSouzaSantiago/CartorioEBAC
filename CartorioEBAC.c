@@ -134,23 +134,23 @@ int main() // local de início "int" referente a numeros inteiros
 		for(laco=1;laco=1;) //Para fazer com que o usuário sempre fique nesse laço
 		{
 	
-	    	system("cls"); //Responsavel por limpar a tela
+			system("cls"); //Responsavel por limpar a tela
 	
-        	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem para uso de caractere especial
+			setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem para uso de caractere especial
    	
-    		printf("*** Cartório da EBAC ***\n\n"); //Inicio do menu
-    		printf("Escolha a opção desejada do menu:\n\n");
-    		printf("\t1 - Registrar nomes\n");
-    		printf("\t2 - Consultar nomes\n");
-    		printf("\t3 - Deletar nomes\n");
-    		printf("\t4 - Sair do sitema \n\n");
-    		printf("Opção: "); //Fim do menu
+			printf("*** Cartório da EBAC ***\n\n"); //Inicio do menu
+			printf("Escolha a opção desejada do menu:\n\n");
+			printf("\t1 - Registrar nomes\n");
+			printf("\t2 - Consultar nomes\n");
+			printf("\t3 - Deletar nomes\n");
+			printf("\t4 - Sair do sitema \n\n");
+			printf("Opção: "); //Fim do menu
      	
-        	scanf("%d", &opcao); //Armazenando a escolha do usuário
+			scanf("%d", &opcao); //Armazenando a escolha do usuário
  	
-    		system("cls"); //Responsavel por limpar a tela
-   	   
-   	    	switch(opcao) //Inicio da seleção do menu
+			system("cls"); //Responsavel por limpar a tela
+
+			switch(opcao) //Inicio da seleção do menu
 			{
 		   		case 1:
 		   		registro(); //Chamada de funções

@@ -14,7 +14,7 @@ int registro() //Função responsavel por cadastrar os usuários no sistema
 	//Final de criação de variaveis/stings	
 	
 	printf("Digite o CPF a ser cadastrado: "); //Coletando informação do usuário
-	scanf("%s", cpf); //%s refere-se as strings
+	scanf("%s",cpf); //%s refere-se as strings
 	
 	strcpy(arquivo, cpf); //Responsavel por copiar valores da string
 	
@@ -62,7 +62,7 @@ int registro() //Função responsavel por cadastrar os usuários no sistema
 
 int consulta()
 {
-	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
+	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem para uso de caractere especial
 	
 	//Inicio de criação de variaveis/stings
 	char cpf[40];
@@ -119,50 +119,64 @@ int main() // local de início "int" referente a numeros inteiros
 {
 	int opcao=0; //Definindo as variaveis
 	int laco=1; //Laço de repetição dado a numeros inteiros
+	char senhadigitada[10]="a"; //Criação da variavel string 
+	int comparacao; //Funçaõ de Comparação
 	
-	for(laco=1;laco=1;)
+	printf("*** Cartório da EBAC ***\n\n");
+	printf("Login de Administrador!!\n\nDigite a senha: ");
+	scanf("%s",senhadigitada); //%s Refere-se as strings
+	
+	comparacao = strcmp(senhadigitada, "admin"); //Fazendo a comparação da string com a senha pre determinada "admin"
+	
+	if(comparacao == 0) //Se co comparativo da função a cima estiver ok ele vai acessar o menu
 	{
-	
-	    system("cls"); //Responsavel por limpar a tela
-	
-        setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem
-   	
-    	printf("*** Cartório da EBAC ***\n\n"); //Inicio do menu
-    	printf("Escolha a opção desejada do menu:\n\n");
-    	printf("\t1 - Registrar nomes\n");
-    	printf("\t2 - Consultar nomes\n");
-    	printf("\t3 - Deletar nomes\n");
-    	printf("\t4 - Sair do sitema \n\n");
-    	printf("Opção: "); //Fim do menu
-     	
-        scanf("%d", &opcao); //Armazenando a escolha do usuário
- 	
-    	system("cls"); //Responsavel por limpar a tela
-   	   
-   	    switch(opcao) //Inicio da seleção do menu
+		
+		for(laco=1;laco=1;) //Para fazer com que o usuário sempre fique nesse laço
 		{
-		   case 1:
-		   registro(); //Chamada de funções
-		   break; //Forçar a saída de um laço de repetição "Quebra"
+	
+	    	system("cls"); //Responsavel por limpar a tela
+	
+        	setlocale(LC_ALL, "Portuguese"); //Definindo a linguagem para uso de caractere especial
+   	
+    		printf("*** Cartório da EBAC ***\n\n"); //Inicio do menu
+    		printf("Escolha a opção desejada do menu:\n\n");
+    		printf("\t1 - Registrar nomes\n");
+    		printf("\t2 - Consultar nomes\n");
+    		printf("\t3 - Deletar nomes\n");
+    		printf("\t4 - Sair do sitema \n\n");
+    		printf("Opção: "); //Fim do menu
+     	
+        	scanf("%d", &opcao); //Armazenando a escolha do usuário
+ 	
+    		system("cls"); //Responsavel por limpar a tela
+   	   
+   	    	switch(opcao) //Inicio da seleção do menu
+			{
+		   		case 1:
+		   		registro(); //Chamada de funções
+		   		break; //Forçar a saída de um laço de repetição "Quebra"
 		   
-		   case 2:
-		   consulta(); //Chamada de funções
-		   break; //Forçar a saída de um laço de repetição "Quebra"
+		   		case 2:
+		   		consulta(); //Chamada de funções
+		   		break; //Forçar a saída de um laço de repetição "Quebra"
 		   
-		   case 3:
-		   deletar(); //Chamada de funções
-		   break; //Forçar a saída de um laço de repetição "Quebra"
+		   		case 3:
+		   		deletar(); //Chamada de funções
+		   		break; //Forçar a saída de um laço de repetição "Quebra"
 		   
-		   case 4:
-		   printf("Obrigado por utilizar o sistema!\n");
-		   return 0;
-		   break;
+		   		case 4:
+		   		printf("Obrigado por utilizar o sistema!\n");
+		   		return 0; //Encerramento do sistema, vai forçar a quebra do laço
+		   		break; //Forçar a saída de um laço de repetição "Quebra"
 		   
-		   default:
-		   printf("Essa opção nao está disponivel!\n");
-		   system("pause"); //Pausa arquivo para leitura do usuário
-		   break;//Forçar a saída de um laço de repetição "Quebra"
+		   		default:
+		   		printf("Essa opção nao está disponivel!\n");
+		   		system("pause"); //Pausa arquivo para leitura do usuário
+		   		break;//Forçar a saída de um laço de repetição "Quebra"
 		   	
-		}//Fim da seleção	   
-	} 
+			}//Fim da seleção	   
+		} 
+	}
+	else//Errou a senha sera dado a mensagem a baixo e encerrara o programa
+		printf("Senha Incorreta!");
 }
